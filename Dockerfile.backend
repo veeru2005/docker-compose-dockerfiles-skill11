@@ -7,7 +7,7 @@
     RUN apt-get update && apt-get install -y git
     
     # Clone your backend repo
-    RUN git clone https://github.com/srithars/s207-ecomm-backend-docker.git .
+    RUN git clone https://github.com/veeru2005/docker-compose-backend-skill11.git .
 
     RUN mvn clean package -DskipTests
 
@@ -21,4 +21,5 @@
     COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/back1.war
 
     EXPOSE 8080
+
     CMD ["catalina.sh", "run"]    

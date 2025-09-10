@@ -6,7 +6,7 @@
     RUN apt-get update && apt-get install -y git
     
     # Clone your frontend repo
-    RUN git clone https://github.com/srithars/s207-ecomm-frontend-docker.git .
+    RUN git clone https://github.com/veeru2005/docker-compose-frontend-skill11.git .
     
     RUN npm install
     RUN npm run build
@@ -19,4 +19,5 @@
     COPY --from=build-stage /app/dist /usr/local/tomcat/webapps/ecommerce
 
     EXPOSE 8082
+
     CMD ["catalina.sh", "run"]
